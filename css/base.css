@@ -1,0 +1,71 @@
+/* Reset and shared components. page.css sets the custom properties and layout. */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body { margin: 0; overflow-x: clip; font-family: "Jost", system-ui, sans-serif; color: var(--ink, #2b2b2b); background: var(--bg, #fdf8f0); -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+h1, h2, h3, p, figure, ul { margin: 0; }
+ul { padding: 0; list-style: none; }
+button { font: inherit; }
+.wrap { width: min(var(--max, 1200px), 100% - 2 * var(--gutter, 32px)); margin-inline: auto; }
+
+/* Recolorable painted shapes: background color shows through an SVG mask. */
+.brush { -webkit-mask: url(../assets/svg/brush.svg) center / 100% 100% no-repeat; mask: url(../assets/svg/brush.svg) center / 100% 100% no-repeat; }
+.torn { -webkit-mask: url(../assets/svg/torn.svg) center / 100% 100% no-repeat; mask: url(../assets/svg/torn.svg) center / 100% 100% no-repeat; }
+
+/* Reel player */
+.reel { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: #111; border-radius: var(--reel-radius, 6px); }
+.reel__poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.reel::after { content: ""; position: absolute; inset: auto 0 0; height: 30%; background: linear-gradient(transparent, rgba(0,0,0,.55)); pointer-events: none; }
+.reel__play { position: absolute; left: 50%; top: 48%; translate: -50% -50%; z-index: 2; width: var(--play-size, 76px); aspect-ratio: 1; border-radius: 50%; border: 2px solid rgba(255,255,255,.85); background: var(--play-bg, rgba(20,20,20,.55)); color: #fff; display: grid; place-items: center; cursor: pointer; transition: transform .2s, background .2s; }
+.reel__play svg { width: 42%; fill: currentColor; translate: 6% 0; }
+.reel__play:hover { transform: scale(1.06); }
+.reel__play[data-soon] { cursor: default; }
+.reel__bar { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; display: flex; align-items: center; gap: 14px; padding: 10px 18px; color: #fff; font-size: 13px; }
+.reel__icon { width: 20px; height: 20px; fill: currentColor; flex: none; }
+.reel__track { flex: 1; height: 3px; background: rgba(255,255,255,.35); border-radius: 2px; position: relative; }
+.reel__track span { position: absolute; left: 0; top: 50%; width: 11px; height: 11px; margin-top: -5.5px; border-radius: 50%; background: #fff; }
+.reel__soon { position: absolute; left: 50%; top: calc(48% + var(--play-size, 76px) / 2 + 14px); translate: -50% 0; z-index: 2; color: #fff; font-size: 12px; letter-spacing: .18em; text-transform: uppercase; text-shadow: 0 1px 6px rgba(0,0,0,.6); white-space: nowrap; }
+.reel.is-playing iframe, .reel.is-playing video { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.reel.is-playing::after { display: none; }
+.reel--vertical { aspect-ratio: 9 / 16; --play-size: 62px; }
+.vert { display: grid; grid-template-columns: minmax(0, 340px) minmax(0, 420px); justify-content: center; gap: 56px; align-items: center; }
+.vert--wide { grid-template-columns: minmax(0, 760px) minmax(0, 320px); }
+.vert__text { margin-top: 14px; font-size: 16px; line-height: 1.6; opacity: .8; }
+
+/* Posters */
+.poster { min-width: 0; }
+.poster__img { display: block; aspect-ratio: 2 / 3; overflow: hidden; border-radius: var(--poster-radius, 3px); box-shadow: var(--poster-shadow, 0 4px 14px rgba(0,0,0,.18)); background: #ddd; }
+.poster__img img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s; }
+.poster__img:hover img { transform: scale(1.04); }
+.poster__cap { margin-top: 12px; text-align: center; font-size: 14px; line-height: 1.3; }
+.poster__meta { display: block; margin-top: 3px; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; opacity: .65; }
+
+/* Headshots */
+.shot { position: relative; overflow: hidden; border-radius: var(--shot-radius, 4px); background: #ccc; }
+.shot img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; }
+.shot img.is-aligned { position: absolute; max-width: none; object-fit: fill; }
+
+/* Socials */
+.socials { display: flex; gap: 18px; align-items: center; }
+.socials a { display: block; color: inherit; }
+.socials svg { height: 24px; width: auto; display: block; }
+
+.rep p { line-height: 1.6; }
+.rep a { text-decoration: none; }
+.rep a:hover { text-decoration: underline; }
+
+@media (max-width: 760px) {
+  .reel__bar { gap: 10px; padding: 8px 12px; }
+  .reel__bar .reel__icon:nth-last-child(-n+2) { display: none; }
+}
+@media (max-width: 640px) {
+  .reel__soon { display: none; }
+  .vert { grid-template-columns: minmax(0, 300px); gap: 18px; }
+  .vert--wide { grid-template-columns: minmax(0, 1fr); }
+  .vert__copy { order: -1; }
+}
+
+/* Wide screens: hero and nav content stays inside a 1440px stage, centred,
+   while backgrounds keep running edge to edge. --side is the empty margin. */
+:root { --stage: 1440px; --side: max(0px, calc((100vw - var(--stage)) / 2)); }

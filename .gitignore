@@ -1,0 +1,4 @@
+node_modules/
+.DS_Store
+# downloaded at build time from assets.json
+assets/img/

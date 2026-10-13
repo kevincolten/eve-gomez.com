@@ -1,0 +1,10 @@
+{
+  "name": "eve-gomez.com",
+  "private": true,
+  "description": "Singer and dancer site for Eve Gomez",
+  "scripts": {
+    "build": "node scripts/fetch-assets.mjs",
+    "assets": "node scripts/fetch-assets.mjs",
+    "dev": "npm run build && npx --yes serve -l 8767 ."
+  }
+}

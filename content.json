@@ -1,0 +1,163 @@
+{
+  "_notes": "All site copy lives here. The page reads everything from this file. Fields marked _todo are placeholders until Eve supplies the real thing.",
+  "person": {
+    "firstName": "Eve",
+    "lastName": "Gomez",
+    "fullName": "Eve Gomez",
+    "location": "Los Angeles, CA",
+    "roles": [
+      "Singer",
+      "Dancer"
+    ],
+    "email": "hello@eve-gomez.com",
+    "socials": [
+      {
+        "type": "youtube",
+        "url": "https://www.youtube.com/@dreamingmusicstudio"
+      },
+      {
+        "type": "email",
+        "url": "mailto:hello@eve-gomez.com"
+      }
+    ]
+  },
+  "images": {
+    "_todo": "hero and about are frames from her covers until there are photos.",
+    "hero": "assets/img/photos/hero.jpg",
+    "about": "assets/img/photos/about.jpg"
+  },
+  "hero": {
+    "eyebrow": "K-pop vocalist",
+    "tagline": "Singer · Dancer · Songwriter",
+    "subline": "Covers, originals and choreography from Los Angeles"
+  },
+  "reel": {
+    "title": "Vocal Reel",
+    "description": "Highlights from her K-pop and musical theatre covers.",
+    "duration": "",
+    "video": "https://media.austindevs.com/eve-gomez/vocal-reel/master.m3u8",
+    "_todo": "HLS stream in the portfolio-media R2 bucket (eve-gomez/vocal-reel/). 720p.mp4 next to the playlist is the fallback.",
+    "poster": "https://media.austindevs.com/eve-gomez/vocal-reel/poster.jpg",
+    "posterPosition": "50% 40%"
+  },
+  "covers": {
+    "title": "Covers",
+    "_notes": "One entry per cover video. video takes a YouTube link, an HLS .m3u8 or an .mp4. kpop: true puts it under the K-pop filter.",
+    "items": [
+      {
+        "title": "It's Me",
+        "artist": "ILLIT",
+        "video": "https://www.youtube.com/watch?v=13wouSMrYZo",
+        "poster": "assets/img/covers/13wouSMrYZo.jpg",
+        "duration": "2:23",
+        "year": 2026,
+        "kpop": true
+      },
+      {
+        "title": "Love Dive",
+        "artist": "IVE",
+        "video": "https://www.youtube.com/watch?v=SIXhAuKYuRg",
+        "poster": "assets/img/covers/SIXhAuKYuRg.jpg",
+        "duration": "2:56",
+        "year": 2026,
+        "kpop": true
+      },
+      {
+        "title": "Takedown",
+        "artist": "HUNTR/X · KPop Demon Hunters",
+        "video": "https://www.youtube.com/watch?v=PdguF-OXalI",
+        "poster": "assets/img/covers/PdguF-OXalI.jpg",
+        "duration": "3:03",
+        "year": 2025,
+        "kpop": true
+      },
+      {
+        "title": "Golden",
+        "artist": "HUNTR/X · KPop Demon Hunters",
+        "note": "With Laura Colten",
+        "video": "https://www.youtube.com/watch?v=dVB5zi57XTo",
+        "poster": "assets/img/covers/dVB5zi57XTo.jpg",
+        "duration": "3:01",
+        "year": 2025,
+        "kpop": true
+      },
+      {
+        "title": "Pop!",
+        "artist": "NAYEON",
+        "video": "https://www.youtube.com/watch?v=d0vCteTH82g",
+        "poster": "assets/img/covers/d0vCteTH82g.jpg",
+        "duration": "1:08",
+        "year": 2025,
+        "kpop": true
+      },
+      {
+        "title": "Hate Rodrigo",
+        "artist": "YENA feat. YUQI",
+        "video": "https://www.youtube.com/watch?v=9ZKkgrRSRis",
+        "poster": "assets/img/covers/9ZKkgrRSRis.jpg",
+        "duration": "3:00",
+        "year": 2025,
+        "kpop": true
+      },
+      {
+        "title": "Hard To Love",
+        "artist": "ROSÉ · BLACKPINK",
+        "note": "Group cover",
+        "video": "https://www.youtube.com/watch?v=jqgmdF0Ivus",
+        "poster": "assets/img/covers/jqgmdF0Ivus.jpg",
+        "duration": "0:52",
+        "year": 2024,
+        "kpop": true
+      },
+      {
+        "title": "For Good",
+        "artist": "Wicked",
+        "note": "Duet with Laura Colten",
+        "video": "https://www.youtube.com/watch?v=oGQm5KWt1uo",
+        "poster": "assets/img/covers/oGQm5KWt1uo.jpg",
+        "duration": "4:23",
+        "year": 2025,
+        "kpop": false
+      },
+      {
+        "title": "Defying Gravity",
+        "artist": "Wicked",
+        "note": "Duet with Laura Colten",
+        "video": "https://www.youtube.com/watch?v=4IJ6zBkHUWI",
+        "poster": "assets/img/covers/4IJ6zBkHUWI.jpg",
+        "duration": "3:33",
+        "year": 2025,
+        "kpop": false
+      }
+    ]
+  },
+  "music": {
+    "title": "Originals",
+    "description": "Songs Eve has written and recorded.",
+    "_todo": "tracks: one entry per song as { \"title\": \"Song\", \"duration\": \"2:45\", \"src\": \"https://media.austindevs.com/eve-gomez/originals/song.mp3\" }. The player shows 'coming soon' until there is at least one.",
+    "videos": [],
+    "tracks": []
+  },
+  "dance": {
+    "title": "Dance",
+    "description": "Choreography and dance covers.",
+    "_todo": "Same shape as covers.items. Shows 'coming soon' while empty.",
+    "items": []
+  },
+  "about": {
+    "_todo": "Replace with Eve's own words.",
+    "paragraphs": [
+      "Eve Gomez is a singer and dancer in Los Angeles who lives and breathes K-pop. She trains at Dreaming Music Studio, where she has covered ILLIT, IVE, NAYEON, YENA and the songs of KPop Demon Hunters, in Korean and English.",
+      "She also writes and records her own songs, and sings musical theatre duets with her mom, the actor and singer Laura Colten."
+    ]
+  },
+  "representation": {
+    "_todo": "Agent or manager details. Inquiries go through a parent.",
+    "label": "Inquiries",
+    "agency": "",
+    "agent": "",
+    "phone": "",
+    "email": "hello@eve-gomez.com",
+    "note": "Bookings and collaborations are handled by her parents."
+  }
+}

@@ -1,0 +1,41 @@
+/* Originals player: audio samples (and optional singing videos). page.css sets --vocal-accent and --vocal-muted. */
+
+.music { display: grid; gap: 22px; }
+.music__sub { font-size: 13px; font-weight: 500; letter-spacing: .22em; text-transform: uppercase; opacity: .75; margin-top: 6px; }
+
+/* Videos */
+.clips { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+.clips[data-count="1"] { grid-template-columns: minmax(0, 860px); justify-content: center; }
+.clips[data-count="2"] { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.clip { margin: 0; min-width: 0; }
+.clip__title { display: flex; justify-content: space-between; gap: 16px; margin-top: 10px; font-size: 15px; }
+.clip__title span { opacity: .65; font-variant-numeric: tabular-nums; }
+.clip__notes { margin-top: 12px; font-size: 15px; line-height: 1.5; opacity: .8; }
+.clips:not([data-count="1"]) .reel { --play-size: 56px; }
+.clips:not([data-count="1"]) .reel__soon { font-size: 10px; }
+
+/* Audio */
+.vocal { display: grid; gap: 14px; }
+.vocal__player { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 18px; }
+.vocal__play { width: 48px; height: 48px; border-radius: 50%; border: 0; background: var(--vocal-accent); color: #fff; display: grid; place-items: center; cursor: pointer; }
+.vocal__play:disabled { cursor: default; opacity: .85; }
+.vocal__play svg { width: 20px; fill: currentColor; }
+.vocal__icon-play { translate: 2px 0; }
+.vocal__icon-pause, .vocal.is-playing .vocal__icon-play { display: none; }
+.vocal.is-playing .vocal__icon-pause { display: block; }
+.vocal__wave { position: relative; height: 56px; cursor: pointer; }
+.vocal__wave svg { position: absolute; inset: 0; width: 100%; height: 100%; fill: var(--vocal-muted); }
+.vocal__fill { position: absolute; inset: 0; clip-path: inset(0 calc(100% - var(--p, 0%)) 0 0); }
+.vocal__fill svg { fill: var(--vocal-accent); }
+.vocal__time { font-size: 13px; letter-spacing: .06em; min-width: 3em; text-align: right; opacity: .75; }
+.vocal__soon { font-size: 12px; letter-spacing: .2em; text-transform: uppercase; opacity: .65; padding-left: 66px; }
+.vocal__tracks { counter-reset: t; border-top: 1px solid var(--vocal-muted); }
+.vocal__tracks button { width: 100%; display: flex; justify-content: space-between; gap: 20px; padding: 12px 4px; border: 0; border-bottom: 1px solid var(--vocal-muted); background: none; color: inherit; font-size: 15px; text-align: left; cursor: pointer; }
+.vocal__tracks button[aria-current] { color: var(--vocal-accent); font-weight: 500; }
+.vocal__dur { opacity: .7; font-variant-numeric: tabular-nums; }
+
+@media (max-width: 640px) {
+  .clips[data-count="2"] { grid-template-columns: 1fr; }
+  .vocal__player { gap: 12px; }
+  .vocal__soon { padding-left: 0; }
+}

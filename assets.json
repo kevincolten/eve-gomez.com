@@ -1,0 +1,17 @@
+{
+  "_notes": "Image files the site uses, with where to download each one (originals are in the portfolio-media R2 bucket). scripts/fetch-assets.mjs pulls anything missing at build time.",
+  "files": {
+    "assets/img/covers/13wouSMrYZo.jpg": "https://media.austindevs.com/eve-gomez/site/covers/13wouSMrYZo.jpg",
+    "assets/img/covers/4IJ6zBkHUWI.jpg": "https://media.austindevs.com/eve-gomez/site/covers/4IJ6zBkHUWI.jpg",
+    "assets/img/covers/9ZKkgrRSRis.jpg": "https://media.austindevs.com/eve-gomez/site/covers/9ZKkgrRSRis.jpg",
+    "assets/img/covers/d0vCteTH82g.jpg": "https://media.austindevs.com/eve-gomez/site/covers/d0vCteTH82g.jpg",
+    "assets/img/covers/dVB5zi57XTo.jpg": "https://media.austindevs.com/eve-gomez/site/covers/dVB5zi57XTo.jpg",
+    "assets/img/covers/jqgmdF0Ivus.jpg": "https://media.austindevs.com/eve-gomez/site/covers/jqgmdF0Ivus.jpg",
+    "assets/img/covers/oGQm5KWt1uo.jpg": "https://media.austindevs.com/eve-gomez/site/covers/oGQm5KWt1uo.jpg",
+    "assets/img/covers/OYkdQQUk25c.jpg": "https://media.austindevs.com/eve-gomez/site/covers/OYkdQQUk25c.jpg",
+    "assets/img/covers/PdguF-OXalI.jpg": "https://media.austindevs.com/eve-gomez/site/covers/PdguF-OXalI.jpg",
+    "assets/img/covers/SIXhAuKYuRg.jpg": "https://media.austindevs.com/eve-gomez/site/covers/SIXhAuKYuRg.jpg",
+    "assets/img/photos/about.jpg": "https://media.austindevs.com/eve-gomez/site/photos/about.jpg",
+    "assets/img/photos/hero.jpg": "https://media.austindevs.com/eve-gomez/site/photos/hero.jpg"
+  }
+}
